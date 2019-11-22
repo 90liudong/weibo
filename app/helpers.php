@@ -1,6 +1,9 @@
 <?php
 function get_db_config()
 {
+    echo getenv('IS_IN_HEROKU');
+    print_r(parse_url(getenv("DATABASE_URL")));
+    exit();
     if (getenv('IS_IN_HEROKU')) {
         $url = parse_url(getenv("DATABASE_URL"));
         return $db_config = [
