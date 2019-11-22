@@ -15,6 +15,7 @@ function get_db_config()
         return $db_config = [
             'connection' => env('DB_CONNECTION', 'mysql'),
             'host'       => env('DB_HOST', 'localhost'),
+            'port'       => env('DB_PORT', '3306'),
             'database'   => env('DB_DATABASE', 'forge'),
             'username'   => env('DB_USERNAME', 'forge'),
             'password'   => env('DB_PASSWORD', '')
