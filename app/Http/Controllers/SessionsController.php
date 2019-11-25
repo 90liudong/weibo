@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\http\Request;
 use Auth;
+use Illuminate\http\Request;
 
 class SessionsController extends Controller
 {
@@ -24,12 +24,13 @@ class SessionsController extends Controller
         } else {
             session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
             return redirect()->back()->withInput();
-            // 登录失败后的相关操作
+            // 登录失败后的相关操
         }
         return;
     }
 
-    public function destroy() {
+    public function destroy()
+    {
         Auth::logout();
         session()->flash('success', '您已成功退出！');
         return redirect('login');
